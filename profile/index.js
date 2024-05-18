@@ -1,12 +1,17 @@
 const express = require('express');
-const connectToMongoDB = require('./database/mongo-connect');
+const connectToMongoDB = require('./database/mongoose-connect');
 const dotenv = require('dotenv');
+
+const profileRoutes = require('./routes/user');
+
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
+
+app.use('/user', profileRoutes);
 
 app.get('/', (req, res) => {
     const jsonData = {

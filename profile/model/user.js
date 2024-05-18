@@ -1,5 +1,13 @@
 const mongoose = require('mongoose');
 
+const userPersonalDetail = new mongoose.Schema({
+  address: String,
+  country_code: String,
+  phone_number_without_code: String,
+  email: String,
+  zip_code: String
+})
+
 const userSchema = new mongoose.Schema({
     user_id: String,
     user_display_name: String,
@@ -11,13 +19,4 @@ const userSchema = new mongoose.Schema({
     user_details: userPersonalDetail
   });
 
-
-  const userPersonalDetail = new mongoose.Schema({
-    address: String,
-    country_code: String,
-    phone_number_without_code: String,
-    email: String,
-    zip_code: String
-  })
-
-  module.exports = userSchema;
+  module.exports = mongoose.model('User', userSchema);
