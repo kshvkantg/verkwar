@@ -2,7 +2,7 @@ const express = require('express');
 const connectToMongoDB = require('./database/mongoose-connect');
 const dotenv = require('dotenv');
 
-const profileRoutes = require('./routes/user');
+const profileRoutes = require('./basic_info/route/user');
 
 dotenv.config();
 
