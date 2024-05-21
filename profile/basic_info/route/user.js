@@ -6,7 +6,7 @@ const deleteUser = require('../controller/DeleteUser');
 const getUser = require('../controller/GetUser');
 
 router.post('/create', createUser);
-router.get('/delete', deleteUser);
+router.delete('/delete', deleteUser);
 router.get('/get', getUser);
 
 module.exports = router;

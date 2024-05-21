@@ -3,6 +3,7 @@ const connectToMongoDB = require('./database/mongoose-connect');
 const dotenv = require('dotenv');
 
 const profileRoutes = require('./basic_info/route/user');
+const UserExperience = require('./user_past_experience/route/UserExperience');
 
 dotenv.config();
 
@@ -12,6 +13,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 app.use('/user', profileRoutes);
+app.use('/user_exp', UserExperience);
 
 app.get('/', (req, res) => {
     const jsonData = {
