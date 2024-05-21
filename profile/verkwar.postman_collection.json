@@ -1,0 +1,353 @@
+{
+	"info": {
+		"_postman_id": "04bf031e-f82a-4cd1-b825-628407c71131",
+		"name": "verkwar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14749195"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "delete_user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\" : \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}user/delete?user_id=1234",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"delete"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "1234"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}user/get?user_id=1234",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"get"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "1234"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \n    \"user_id\": \"789\",\n    \"user_display_name\": \"JohnDoe\",\n    \"user_bio\": \"Passionate software developer with over 10 years of experience in full-stack development.\",\n    \"user_why_me\": \"I bring a unique blend of creativity and technical expertise, making me a valuable asset to any team.\",\n    \"occupation_name\": \"Software Engineer\",\n    \"user_experience_id\": [\n        \"exp001\",\n        \"exp002\",\n        \"exp003\"\n    ],\n    \"user_offering_id\": [\n        \"off001\",\n        \"off002\",\n        \"off003\"\n    ],\n    \"user_details\": {\n        \"address\": \"123 Main St, Apt 4B\",\n        \"country_code\": \"US\",\n        \"phone_number_without_code\": \"5551234567\",\n        \"email\": \"john.doe@example.com\",\n        \"zip_code\": \"90210\",\n        \"_id\": \"66485db4c9b3af6672afcff7\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}user/create",
+							"host": [
+								"{{url}}user"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserExp",
+			"item": [
+				{
+					"name": "create_exp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"user_id\": \"1234\",\n      \"title\": \"Senior Developer\",\n      \"company\": \"TechCorp\",\n      \"startDate\": \"2015-06-01\",\n      \"endDate\": \"2020-08-31\",\n      \"description\": \"Led a team of developers to build scalable web applications.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}user_exp/create",
+							"host": [
+								"{{url}}user_exp"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_exp",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"user_id\": \"1234\",\n      \"title\": \"Senior Developer\",\n      \"company\": \"TechCorp\",\n      \"startDate\": \"2015-06-01\",\n      \"endDate\": \"2020-08-31\",\n      \"description\": \"Led a team of developers to build scalable web applications.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}user_exp/update",
+							"host": [
+								"{{url}}user_exp"
+							],
+							"path": [
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_experince",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"user_id\": \"1234\",\n      \"title\": \"Senior Developer\",\n      \"company\": \"TechCorp\",\n      \"startDate\": \"2015-06-01\",\n      \"endDate\": \"2020-08-31\",\n      \"description\": \"Led a team of developers to build scalable web applications.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}user_exp/get?user_id=1234",
+							"host": [
+								"{{url}}user_exp"
+							],
+							"path": [
+								"get"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "1234"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_exp",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"user_id\": \"1234\",\n      \"title\": \"Senior Developer\",\n      \"company\": \"TechCorp\",\n      \"startDate\": \"2015-06-01\",\n      \"endDate\": \"2020-08-31\",\n      \"description\": \"Led a team of developers to build scalable web applications.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}user_exp/delete?user_id=1234",
+							"host": [
+								"{{url}}user_exp"
+							],
+							"path": [
+								"delete"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "1234"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserService",
+			"item": [
+				{
+					"name": "create_service",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"user_id\": \"1234\",\n      \"serviceId\" : \"1\",\n      \"serviceName\": \"Consultation\",\n      \"description\": \"Provide consultation services for software development.\",\n      \"price\": 100,\n      \"currency\": \"USD\",\n      \"time\": \"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}user_service/create",
+							"host": [
+								"{{url}}user_service"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_user_serv",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"user_id\": \"1234\",\n      \"serviceId\" : \"3\",\n      \"serviceName\": \"Code Reviwer\",\n      \"description\": \"Provide Code review for existing databases\",\n      \"price\": 100,\n      \"currency\": \"USD\",\n      \"time\": \"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}user_service/update",
+							"host": [
+								"{{url}}user_service"
+							],
+							"path": [
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_service",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}user_service/get?user_id=1234",
+							"host": [
+								"{{url}}user_service"
+							],
+							"path": [
+								"get"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "1234"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_service",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"user_id\": \"1234\",\n      \"title\": \"Senior Developer\",\n      \"company\": \"TechCorp\",\n      \"startDate\": \"2015-06-01\",\n      \"endDate\": \"2020-08-31\",\n      \"description\": \"Led a team of developers to build scalable web applications.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}user_exp/delete?user_id=1234",
+							"host": [
+								"{{url}}user_exp"
+							],
+							"path": [
+								"delete"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "1234"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
