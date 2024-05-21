@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 
 const profileRoutes = require('./basic_info/route/user');
 const UserExperience = require('./user_past_experience/route/UserExperience');
+const UserService = require('./user_services/route/ServiceRouter')
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ app.use(express.json());
 
 app.use('/user', profileRoutes);
 app.use('/user_exp', UserExperience);
+app.use('/user_service', UserService);
 
 app.get('/', (req, res) => {
     const jsonData = {
